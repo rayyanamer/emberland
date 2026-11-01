@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmberLand Archive</title>
+    <style>
+        body {
+            font-family: monospace;
+            background-color: #0d0d0d;
+            color: #c0c0c0;
+            padding: 1rem;
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        h1 {
+            font-size: 1.1rem;
+            font-weight: normal;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px dashed #444444;
+            margin: 0.8rem 0;
+        }
+
+        a, .btn-link {
+            color: #5599ff;
+            text-decoration: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            font-size: inherit;
+            padding: 0;
+        }
+
+        a:hover, .btn-link:hover {
+            text-decoration: underline;
+            color: #88bbff;
+        }
+
+        .dir-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+
+        .dir-table th, .dir-table td {
+            text-align: left;
+            padding: 0.2rem 0.5rem 0.2rem 0;
+            font-weight: normal;
+        }
+
+        .dir-table th {
+            color: #888888;
+            border-bottom: 1px solid #333333;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: 1px solid #555555;
+            padding: 0.6rem 1.2rem;
+            margin: 1rem 0;
+            font-family: monospace;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background-color: #2a2a2a;
+            border-color: #5599ff;
+            color: #5599ff;
+            text-decoration: none;
+        }
+
+        .notes {
+            white-space: pre-wrap;
+            color: #dddddd;
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .email-link {
+            color: #5599ff;
+        }
+
+        .view-section {
+            display: none;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- VIEW 1: INDEX DIRECTORY -->
+    <div id="view-index" class="view-section active">
+        <h1>Official Archive of EmberLand Builds</h1>
+        <hr>
+
+        <table class="dir-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Last Modified</th>
+                    <th>Size</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span style="color: #666666;">../</span></td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><button class="btn-link" onclick="showBuild('v002a')">emberland_v0.0.1b.zip</button></td>
+                    <td>2026-11-01 ‏‎16:29:39</td>
+                    <td>38.72MiB</td>
+                </tr>
+                <tr>
+                    <td><button class="btn-link" onclick="showBuild('v001a')">EmberLand_PrePrototype_0.0.1a.zip</button></td>
+                    <td>2026-11-01 ‏‎16:29:39</td>
+                    <td>38.72MiB</td>
+                </tr>
+            </tbody>
+        </table>
+        <hr>
+    </div>
+
+    <!-- VIEW 2A: BUILD 0.0.1a DETAILS -->
+    <div id="view-v001a" class="view-section">
+        <h1>/EmberLand/builds/v0.0.1a/</h1>
+        <hr>
+        <button class="btn-link" onclick="showIndex()">Go Back</button>
+        <br><br>
+
+        <a href="#" class="download-btn" onclick="alert('Downloading EmberLand_PrePrototype_0.0.1a.zip...'); return false;">
+            [ ⇩ DOWNLOAD EmberLand_PrePrototype_0.0.1a.zip (38.72MiB) ]
+        </a>
+
+        <div class="notes">
+--------------------------------------------------------------------------------
+[FILE]: EmberLand_0.0.1a.zip
+[VER] : PrePrototype 0.0.1a
+[DATE]: 2026-11-01 ‏‎16:29:39
+[SIZE]: 38.72MiB
+--------------------------------------------------------------------------------
+
+▣ Things that are made yet....
+- Main Menu
+- Pause Menu
+- Basic 1st person Controller
+- Procedural Seed based Terrain Generation
+- Procedural Tree placements
+- World Manager
+- World Generation (chunk based via seed)
+- Code based Textures and Noise
+- Dither and PSX visual Shader (via gdshader)
+
+▣ Things to be added in next version
+- Day/Night cycle
+- Clouds
+- Better Character Controller (cuz current ver looks so out of physics)
+- FPS Label in GUI/HUD
+- More Foilage
+
+▣ If you encounter any bugs email them at <a href="mailto:rayyanamer@proton.me" class="email-link">rayyanamer@proton.me</a>
+        </div>
+        <hr>
+    </div>
+
+    <!-- VIEW 2B: BUILD 0.0.2a DETAILS -->
+    <div id="view-v002a" class="view-section">
+        <h1>Index of /EmberLand/builds/v0.0.2a/</h1>
+        <hr>
+        <button class="btn-link" onclick="showIndex()">← [Back to Directory Index]</button>
+        <br><br>
+
+        <a href="#" class="download-btn" onclick="alert('Downloading EmberLand_Prototype_0.0.2a.zip...'); return false;">
+            [ ⇩ DOWNLOAD EmberLand_Prototype_0.0.2a.zip (42.10 MiB) ]
+        </a>
+
+        <div class="notes">
+--------------------------------------------------------------------------------
+[FILE]: EmberLand_Prototype_0.0.2a.zip
+[VER] : Prototype 0.0.2a
+[DATE]: 2026-11-01 12:00:00.000
+[SIZE]: 42.10 MiB
+--------------------------------------------------------------------------------
+
+▣ Things that are made yet....
+- Day/Night cycle implemented
+- Volumetric clouds
+- Updated Character Controller with physics fixes
+- FPS Label HUD display
+- Added extra foliage types
+
+▣ Things to be added in next version
+- Audio & Ambient Soundscapes
+- Save/Load World States
+- Inventory System
+
+▣ If you encounter any bugs email them at <a href="mailto:rayyanamer@proton.me" class="email-link">rayyanamer@proton.me</a>
+        </div>
+        <hr>
+    </div>
+
+    <script>
+        function showIndex() {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-index').classList.add('active');
+        }
+
+        function showBuild(buildId) {
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+            document.getElementById('view-' + buildId).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
